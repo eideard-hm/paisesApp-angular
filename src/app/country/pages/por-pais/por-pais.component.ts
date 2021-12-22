@@ -10,21 +10,23 @@ import { CountryService } from '../../services/country.service';
 })
 export class PorPaisComponent {
 
-  termino: string = ''
+  termino: string = '';
   hayError: boolean = false;
   results: Country[] = [];
 
   constructor(private countryService: CountryService) { }
 
-  buscar() {
+  buscar(termino: string) {
+    this.termino = termino;
     this.hayError = false;
     this.countryService.searchByCountry(this.termino)
-      .subscribe(
-        (res) => this.results = res,
-        (err) => {
+      .subscribe({
+        next: (res) => this.results = res,
+        error: () => {
           this.hayError = true;
           this.results = [];
         }
+      }
       )
   }
 }
