@@ -4,6 +4,7 @@ import { PorCapitalComponent } from './country/pages/por-capital/por-capital.com
 
 import { PorPaisComponent } from './country/pages/por-pais/por-pais.component'
 import { PorRegionComponent } from './country/pages/por-region/por-region.component'
+import { VerPaisComponent } from './country/pages/ver-pais/ver-pais.component'
 
 const routes: Routes = [
   {
@@ -21,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'pais/:id',
-    component: PorPaisComponent
+    component: VerPaisComponent
   },
   {
     path: '**',
