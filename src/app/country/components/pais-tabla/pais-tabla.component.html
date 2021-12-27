@@ -8,8 +8,9 @@
       <th> </th>
     </tr>
   </thead>
-  <tbody *ngFor="let country of results; let i = index">
-    <tr>
+  <tbody>
+    <tr *ngFor="let country of results; let i = index"
+        class="animate__animated animate__fadeIn animate__faster">
       <td>{{i +1}}</td>
       <td>
         <img [src]="country.flags.png" [alt]="country.name.common" class="small-flag">
